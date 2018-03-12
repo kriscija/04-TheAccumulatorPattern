@@ -149,7 +149,7 @@ def draw_lines(n, point, window):
     y = point.y
     for _ in range(n):
         point = rg.Point(x, y)
-        point2 = rg.Point(x + 100, y -100 + 200/n)
+        point2 = rg.Point(x + 100, y -100 + 200 #do something here)
         line = rg.Line(point, point2)
         line.attach_to(window)
 
