@@ -7,8 +7,8 @@ A subsequent module lets you practice the ACCUMULATOR pattern in another classic
    IN GRAPHICS:   x = x + pixels
 
 Authors: David Mutchler, Dave Fisher, Valerie Galluzzi, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Joe Krisciunas.
+"""  # Done
 
 
 # ----------------------------------------------------------------------
@@ -31,7 +31,7 @@ def main():
 def run_test_sum_more_cosines():
     """ Tests the   sum_more_cosines   function. """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement this TEST function.
+    # Done
     #   It TESTS the  sum_more_cosines  function defined below.
     #   Include at least **   3   ** tests (we wrote one for you).
     #
@@ -57,18 +57,33 @@ def run_test_sum_more_cosines():
     print('--------------------------------------------------')
 
     # Test 1:
-    expected = 0.13416  # This is APPROXIMATELY the correct answer.
-    answer = sum_more_cosines(0, 3)
-    print('Test 1 expected:', expected, '(approximately)')
-    print('       actual:  ', answer)
+    expected1 = 0.13416  # This is APPROXIMATELY the correct answer.
+    answer1 = sum_more_cosines(0, 3)
+    print('Test 1 expected:', expected1, '(approximately)')
+    print('       actual:  ', answer1)
 
     # ------------------------------------------------------------------
     # TO DO: 2 (continued).
     # Below this comment, add 2 more test cases of your own choosing.
     # ------------------------------------------------------------------
+    # test 2
+    expected2 = 1.3328
+    answer2 = sum_more_cosines(0, 8)
+    print('Test 2 expected:', expected2, 'approximately')
+    print('        actual:  ', answer2)
 
+    # test 3
+    expected3 = 0.02082
+    answer3 = sum_more_cosines(-4, 1)
+    print('Test 3 expected:', expected3, 'approximately')
+    print('        actual:  ', answer3)
 
 def sum_more_cosines(m, n):
+    for k in range(n)
+
+
+
+
     """
     What comes in:  The two arguments are integers m and n, with m <= n.
     What goes out:  Returns the sum
