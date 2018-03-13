@@ -90,7 +90,7 @@ def run_test_sum_from():
     print('       actual (from my code):  ', answer_from_my_code)
 
 # ----------------------------------------------------------------------
-# TODO: 2.
+# Done
 #   When you have READ the above  run_test_sum_from  function,
 #   asking questions as needed, and you feel that you (mostly, at least)
 #   understand it, and you feel that you understand from the example:
@@ -105,6 +105,12 @@ def run_test_sum_from():
 
 
 def sum_from(m, n):
+    total = 0
+    for k in range(n-m+1):
+        total = total + (m+k)
+    return total
+
+
     """
     What comes in:  The arguments are two integers m and n, with m <= n.
     What goes out:  Returns the sum of the integers from m to n,
@@ -114,7 +120,7 @@ def sum_from(m, n):
         sum_from(6, 9) returns 6 + 7 + 8 + 9, that is, 30.
     """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # Done
     #          Tests have been written for you (above).
     #
     # IMPORTANT:  Your solution MUST
