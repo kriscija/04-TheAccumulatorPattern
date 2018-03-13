@@ -135,7 +135,7 @@ def sum_from(m, n):
 def run_test_factorial():
     """ Tests the   factorial   function. """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # Done
     #   It TESTS the  factorial  function defined below.
     #   Include at least **   5   ** tests (we wrote two for you).
     #
@@ -168,8 +168,31 @@ def run_test_factorial():
     #   ** uses  math.factorial  as an ORACLE for testing. **
     # ------------------------------------------------------------------
 
+    # Test 3
+    answer_from_oracle = math.factorial(15)
+    answer_from_my_code = factorial(15)
+    print('Test 3 expected:', answer_from_oracle)
+    print('       actual:', answer_from_my_code)
 
+    # Test 4
+    answer_from_oracle = math.factorial(25)
+    answer_from_my_code = factorial(25)
+    print('Test 4 expected:', answer_from_oracle)
+    print('       actual:', answer_from_my_code)
+
+    # Test 3
+    answer_from_oracle = math.factorial(5)
+    answer_from_my_code = factorial(5)
+    print('Test 5 expected:', answer_from_oracle)
+    print('       actual:', answer_from_my_code)
 def factorial(n):
+    sum = 1
+    for k in range(n):
+        sum = sum * (k+1)
+
+    return sum
+
+
     """
     What comes in:  The sole argument is a non-negative integer n.
     What goes out:  Returns n!, that is, n x (n-1) x (n-2) x ... x 1.
@@ -179,7 +202,7 @@ def factorial(n):
         factorial(0) returns 1 (by definition).
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # Done
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT:  Your solution MUST
@@ -188,9 +211,11 @@ def factorial(n):
 
 
 def run_test_count_cosines_from():
+
+
     """ Tests the   count_cosines_from   function. """
     # ------------------------------------------------------------------
-    # TODO: 6. Implement this TEST function.
+    # Done
     #   It TESTS the  count_cosines_from  function defined below.
     #   Include at least **   6   ** tests (we wrote one for you).
     #              ** Yes, 6 (six) tests. **
@@ -224,13 +249,53 @@ def run_test_count_cosines_from():
     print('Test 1 expected:', expected)
     print('       actual:  ', answer)
 
+
+
     # ------------------------------------------------------------------
     # TO DO: 6 (continued).
-    # Below this comment, add 5 more test cases of your own choosing.
+    # Below this comment, add 5 more test cases of your own choosing.(DID THIS ABOVE)
     # ------------------------------------------------------------------
+ # Test 2:
+    expected = 3
+    answer = count_cosines_from(3, 9, 0.27)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
 
+    # Test 3
+    expected = 4
+    answer = count_cosines_from(4, 8, -0.5)
+    print('Test 3 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 4:
+    expected = 0
+    answer = count_cosines_from(3, 9, 1)
+    print('Test 4 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 5:
+    expected = 7
+    answer = count_cosines_from(3, 9, -1)
+    print('Test 5 expected:', expected)
+    print('       actual:  ', answer)
+
+    # Test 1:
+    expected = 2
+    answer = count_cosines_from(6, 8, 0)
+    print('Test 1 expected:', expected)
+    print('       actual:  ', answer)
 
 def count_cosines_from(m, n, x):
+    import math
+    count = 0
+    for k in range(n-m+1):
+        if math.cos(m+k) > x:
+            count = count +1
+    return count
+
+
+
+
     """
     What comes in:  The three arguments are non-negative integers
       m and n, with m <= n, and a number x.
@@ -250,7 +315,7 @@ def count_cosines_from(m, n, x):
       -- count_cosines_from(4, 8, -0.5)  returns  4
     """
     # ------------------------------------------------------------------
-    # TODO: 7. Implement and test this function.
+    # Done
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT: As in previous problems in this session,
@@ -262,7 +327,7 @@ def count_cosines_from(m, n, x):
 def run_test_sum_unit_fractions_from():
     """ Tests the   sum_unit_fractions_from   function. """
     # ------------------------------------------------------------------
-    # TODO: 8. Implement this TEST function.
+    # Done
     #   It TESTS the  sum_unit_fractions_from  function defined below.
     #   Include at least **   3   ** tests (we wrote one for you).
     # Use the same 4-step process as for previous TEST functions.
@@ -283,8 +348,26 @@ def run_test_sum_unit_fractions_from():
     # Below this comment, add 2 more test cases of your own choosing.
     # ------------------------------------------------------------------
 
+# Test 2:
+    expected = 6.583
+    answer = sum_unit_fractions_from(10, 9000)
+    print('Test 2 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
 
+# Test 3:
+    expected = 1.5888
+    answer = sum_unit_fractions_from(1, 3)
+    print('Test 3 expected:', expected, '(approximately)')
+    print('       actual:  ', answer)
 def sum_unit_fractions_from(m, n):
+
+    sum = 0
+    for k in range(n-m+1):
+        sum = sum + (1/(m+k))
+
+    return sum
+
+
     """
     What comes in:  Two positive integers m and n with m <= n.
     What goes out:  Returns the sum:
@@ -297,7 +380,7 @@ def sum_unit_fractions_from(m, n):
       -- sum_unit_fractions_from(10, 9000)  returns about  6.853
     """
     # ------------------------------------------------------------------
-    # TODO: 9. Implement and test this function.
+    # Done
     #   Note that you should write its TEST function first (above).
     #
     # IMPORTANT: As in previous problems in this session,
