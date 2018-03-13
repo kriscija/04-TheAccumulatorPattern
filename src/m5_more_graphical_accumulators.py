@@ -73,6 +73,16 @@ def run_test_draw_squares_from_circle():
 
 
 def draw_squares_from_circle(n, circle, window):
+    x = circle.center.x
+    y = circle.center.y
+    r = circle.radius
+    for _ in range(n+1):
+        circle = rg.Circle((rg.Point(x, y), circle.radius))
+        square = rg.Square((rg.Point(x+r*n, y+r*n), circle.radius))
+        square.attach_to(window)
+        circle.attach_to(window)
+
+    window.render()
     """
     What comes in:  Three arguments:
       -- A positive integer n.
