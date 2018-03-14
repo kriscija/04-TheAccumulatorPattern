@@ -76,11 +76,9 @@ def draw_squares_from_circle(n, circle, window):
     x = circle.center.x
     y = circle.center.y
     r = circle.radius
-    for _ in range(n+1):
-        circle = rg.Circle((rg.Point(x, y), circle.radius))
-        square = rg.Square((rg.Point(x+r*n, y+r*n), circle.radius))
-        square.attach_to(window)
-        circle.attach_to(window)
+    for k in range(n):
+        rg.Point(circle.center.x + circle.radius * k, circle.center.y + circle.radius * k)
+        
 
     window.render()
     """
