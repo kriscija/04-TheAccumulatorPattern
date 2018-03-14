@@ -130,6 +130,9 @@ def run_test_draw_circles_from_rectangle():
     print('  See the graphics windows that pop up.')
     print('--------------------------------------------------')
 
+    # test 1
+
+    rectangle rg.Rectangle(rg.Point(400, 250), rg.Point(440, 325))
     # ------------------------------------------------------------------
     # TODO: 3. Implement this TEST function.
     #   It TESTS the  draw_circles_from_rectangle  function
