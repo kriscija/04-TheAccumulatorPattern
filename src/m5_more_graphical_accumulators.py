@@ -132,7 +132,18 @@ def run_test_draw_circles_from_rectangle():
 
     # test 1
 
-    rectangle rg.Rectangle(rg.Point(400, 250), rg.Point(440, 325))
+    rectangle = rg.Rectangle(rg.Point(400, 250), rg.Point(440, 325))
+    window1 = rg.RoseWindow(720, 500)
+    m = 4
+    n = 5
+    window1.close_on_mouse_click()
+    # test 2
+
+    rectangle = rg.Rectangle(rg.Point(400, 250), rg.Point(440, 325))
+    window = rg.RoseWindow(720, 500)
+    m = 4
+    n = 5
+
     # ------------------------------------------------------------------
     # TODO: 3. Implement this TEST function.
     #   It TESTS the  draw_circles_from_rectangle  function
@@ -244,6 +255,7 @@ def run_test_draw_lines_from_rectangles():
 
 
 def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
+
     """
     What comes in:  Four arguments:
       -- Two rg.Rectangles.
@@ -279,6 +291,26 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
       :type n: int
       :type window: rg.RoseWindow
       """
+
+    rectangle1.attach_to(window)
+    rectangle2.attach_to(window)
+
+    count = 0
+    x = rectangle1.get_center()
+    y = rectangle2.get_center()
+    for k in range(n+1):
+        point1 = ((x.x - (rectangle1.corner_2.x - rectangle1.corner_1.x)/2)*k), (rectangle1.center.x - (rectangle1.corner_2.x - rectangle1.corner_1.y)/2)*k
+        point2 = ((rectangle2.center.x - (rectangle2.corner_2.x - rectangle2.corner_1.x) / 2) * k), (
+                    rectangle2.center.x - (rectangle2.corner_2.x - rectangle2.corner_1.y) / 2) * k
+        line = rg.Line(point1, point2)
+        line.attach_to(window)
+        count = count + 1
+        if count % 2 ==0:
+            line.color = rectangle1.outline_color
+        else:
+            line.color = rectangle2.outline_color
+
+
     # ------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #          Tests have been written for you (above).
