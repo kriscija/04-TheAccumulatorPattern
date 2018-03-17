@@ -299,9 +299,7 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     x = rectangle1.get_center()
     y = rectangle2.get_center()
     for k in range(n+1):
-        point1 = ((x.x - (rectangle1.corner_2.x - rectangle1.corner_1.x)/2)*k), (rectangle1.center.x - (rectangle1.corner_2.x - rectangle1.corner_1.y)/2)*k
-        point2 = ((rectangle2.center.x - (rectangle2.corner_2.x - rectangle2.corner_1.x) / 2) * k), (
-                    rectangle2.center.x - (rectangle2.corner_2.x - rectangle2.corner_1.y) / 2) * k
+
         line = rg.Line(point1, point2)
         line.attach_to(window)
         count = count + 1
