@@ -296,8 +296,16 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     rectangle2.attach_to(window)
 
     count = 0
-    x = rectangle1.get_center()
-    y = rectangle2.get_center()
+    rect1center = rectangle1.get_center()
+    rect2center = rectangle2.get_center()
+    point1 = rg.Point(rect1center.x, rect1center.y)
+    point2 = rg.Point(rect2center.x, rect2center.y)
+    rect1height = rectangle1.get_height()
+    rect2height = rectangle2.get_height()
+    rect2width = rectangle2.get_width()
+    rect1width = rectangle1.get_width()
+
+
     for k in range(n+1):
 
         line = rg.Line(point1, point2)
@@ -307,8 +315,10 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
             line.color = rectangle1.outline_color
         else:
             line.color = rectangle2.outline_color
+        point1 = rg.Point(rect1center.x-(rect1width/2 * k) , rect1center.y + (rect1height/2*k))
+        point2 = rg.Point(rect2center.x - (rect1width/2*k), rect2center.y + (rect1height/2*k))
 
-
+    window.render()
     # ------------------------------------------------------------------
     # TODO: 5. Implement and test this function.
     #          Tests have been written for you (above).
